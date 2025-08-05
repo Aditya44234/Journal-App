@@ -1,0 +1,149 @@
+.dashboard-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.dashboard-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.journal-prompt {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  background-color: #f0f4ff;
+  padding: 12px;
+  border-left: 4px solid #007bff;
+  border-radius: 6px;
+}
+
+.journal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title-date {
+  display: flex;
+  justify-content: center;
+  padding: 10px 4px;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.journal-title {
+  
+  padding: 10px ;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+
+
+
+.journal-date {
+  padding: 10px ;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.journal-textarea {
+  width: 100%;
+  min-height: 120px;
+  resize: none;
+  overflow: hidden;
+  padding: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  transition: height 0.2s ease-out;
+  background-color: #fdfdfd;
+}
+
+.journal-submit {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.journal-submit:hover {
+  background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .dashboard-heading {
+    font-size: 1.5rem;
+  }
+
+  .journal-prompt {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .title-date {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .journal-title,
+  .journal-date {
+    width: 70%;
+    font-size: 0.95rem;
+  }
+
+  .journal-textarea {
+    font-size: 15px;
+    min-height: 100px;
+  }
+
+  .journal-submit {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-heading {
+    font-size: 1.25rem;
+  }
+
+  .journal-prompt {
+    font-size: 0.9rem;
+  }
+
+  .journal-textarea {
+    font-size: 14px;
+  }
+
+  .journal-submit {
+    width: 100%;
+  }
+}

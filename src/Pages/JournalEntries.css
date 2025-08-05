@@ -1,0 +1,192 @@
+/* JournalEntries.css */
+
+.journal-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #f9f9fb;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .journal-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .entry-card {
+    background-color: #fff;
+    border-left: 4px solid #4a90e2;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .entry-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .entry-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.3rem;
+    color: #222;
+  }
+  
+  .entry-card p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    margin-bottom: 0.5rem;
+  }
+  
+  .entry-card small {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .no-entries {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #999;
+    margin-top: 2rem;
+  }
+
+  .clear-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 16px 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+
+  }
+  
+  .clear-button:hover {
+    background-color: #e60000;
+  }
+
+
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.left-controls {
+  flex: 1;
+}
+
+.right-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.date-picker {
+  font-family: 'Poppins', sans-serif;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.clear-button {
+  font-family: 'Poppins', sans-serif;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ff6b6b;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clear-button:hover {
+  background-color: #e63946;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .journal-container {
+    padding: 0.5rem;
+    margin: 1rem;
+  }
+
+  .journal-heading {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .entry-card {
+    padding: 0.8rem;
+  }
+
+  .entry-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .entry-card p {
+    font-size: 1rem;
+  }
+
+  .entry-card small {
+    font-size: 0.8rem;
+  }
+
+  .top-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .right-controls {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .date-picker,
+  .clear-button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .journal-heading {
+    font-size: 1.4rem;
+  }
+
+  .entry-card {
+    padding: 0.6rem;
+  }
+
+  .entry-card h3 {
+    font-size: 1rem;
+  }
+
+  .entry-card p {
+    font-size: 0.95rem;
+  }
+
+  .top-controls {
+    gap: 8px;
+  }
+
+  .date-picker,
+  .clear-button {
+    font-size: 0.95rem;
+  }
+}
