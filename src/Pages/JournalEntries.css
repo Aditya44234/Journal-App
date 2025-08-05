@@ -1,85 +1,56 @@
 /* JournalEntries.css */
 
 .journal-container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: #f9f9fb;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  .journal-heading {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: #333;
-    text-align: center;
-  }
-  
-  .entry-card {
-    background-color: #fff;
-    border-left: 4px solid #4a90e2;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .entry-card:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .entry-card h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.3rem;
-    color: #222;
-  }
-  
-  .entry-card p {
-    font-size: 1.1rem;
-    color: #444;
-    line-height: 1.6;
-    white-space: pre-wrap;
-    margin-bottom: 0.5rem;
-  }
-  
-  .entry-card small {
-    font-size: 0.9rem;
-    color: #888;
-  }
-  
-  .no-entries {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #999;
-    margin-top: 2rem;
-  }
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
 
-  .clear-button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    margin: 16px 5px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-weight: bold;
+.journal-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  z-index: 1;
+}
 
-  }
-  
-  .clear-button:hover {
-    background-color: #e60000;
-  }
+.journal-container > * {
+  position: relative;
+  z-index: 2;
+}
 
+.journal-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
 
 .top-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 0 10px;
+  margin-bottom: 2rem;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .left-controls {
@@ -88,53 +59,164 @@
 
 .right-controls {
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 
 .date-picker {
-  font-family: 'Poppins', sans-serif;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 12px 16px;
+  border: 2px solid #e1e5e9;
+  border-radius: 10px;
+  background: #f8f9fa;
   color: #333;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.date-picker:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
 }
 
 .clear-button {
-  font-family: 'Poppins', sans-serif;
-  padding: 8px 14px;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 12px 20px;
   border: none;
-  border-radius: 6px;
-  background-color: #ff6b6b;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
   color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.clear-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.clear-button:hover::before {
+  left: 100%;
 }
 
 .clear-button:hover {
-  background-color: #e63946;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
 }
 
+.clear-button:active {
+  transform: translateY(0);
+}
+
+.entry-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-left: 5px solid #667eea;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.entry-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.entry-card:hover::before {
+  opacity: 1;
+}
+
+.entry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.entry-card h3 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  color: #2c3e50;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.entry-card p {
+  font-size: 1.1rem;
+  color: #34495e;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.entry-card small {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 5px 12px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 20px;
+}
+
+.no-entries {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #7f8c8d;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  font-style: italic;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   .journal-container {
-    padding: 0.5rem;
+    padding: 1.5rem;
     margin: 1rem;
   }
 
   .journal-heading {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .entry-card {
-    padding: 0.8rem;
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
   }
 
   .entry-card h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .entry-card p {
@@ -142,14 +224,14 @@
   }
 
   .entry-card small {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 
   .top-controls {
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
-    padding: 0;
+    gap: 15px;
+    padding: 15px;
   }
 
   .right-controls {
@@ -162,19 +244,29 @@
     width: 100%;
     font-size: 1rem;
   }
+
+  .no-entries {
+    font-size: 1.1rem;
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
+  .journal-container {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
   .journal-heading {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .entry-card {
-    padding: 0.6rem;
+    padding: 1rem;
   }
 
   .entry-card h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .entry-card p {
@@ -182,11 +274,18 @@
   }
 
   .top-controls {
-    gap: 8px;
+    gap: 10px;
+    padding: 12px;
   }
 
   .date-picker,
   .clear-button {
     font-size: 0.95rem;
+    padding: 10px 15px;
+  }
+
+  .no-entries {
+    font-size: 1rem;
+    padding: 1rem;
   }
 }
